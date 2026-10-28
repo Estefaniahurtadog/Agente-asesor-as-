@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="DebitoCreditoCuentaPorComex" targetNamespace="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/wsdl/DebitoCreditoCuentaPorComex" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/wsdl/DebitoCreditoCuentaPorComex" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/xsd/DebitarAcreditarCuenta" xmlns:ns2="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/xsd/ReversarDebitoCreditoCuenta">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:import
+    		namespace="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/xsd/DebitarAcreditarCuenta"
+    		schemaLocation="../xsd/DebitarAcreditarCuenta.xsd">
+			</xsd:import>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="debitarAcreditarCuentaRequest">
+		<wsdl:part element="ns1:DebitarAcreditarCuenta" name="input"/>
+	</wsdl:message>
+	<wsdl:message name="debitarAcreditarCuentaResponse">
+		<wsdl:part element="ns1:DebitarAcreditarCuentaRta" name="output"/>
+	</wsdl:message>
+	<wsdl:portType name="DebitoCreditoCuentaPorComexPortType">
+		<wsdl:operation name="debitarAcreditarCuenta">
+			<wsdl:input message="tns:debitarAcreditarCuentaRequest"/>
+			<wsdl:output message="tns:debitarAcreditarCuentaResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="DebitoCreditoCuentaPorComexBinding"
+  	type="tns:DebitoCreditoCuentaPorComexPortType">
+		<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="debitarAcreditarCuenta">
+			<soap:operation
+  			soapAction="http://www.example.org/DebitoCreditoCuentaPorComex/NewOperation" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="DebitoCreditoCuentaPorComexService">
+		<wsdl:port binding="tns:DebitoCreditoCuentaPorComexBinding" name="DebitoCreditoCuentaPorComexPort">
+			<soap:address location="http://10.120.22.195:20004/DebitoCreditoCuentaPorComexService/DebitoCreditoCuentaPorComexPort"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

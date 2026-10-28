@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="ConsultaTitularidad" targetNamespace="http://bancodeoccidente.com.co/Servicios/Negocio/Consulta/wsdl/ConsultaTitularidad" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://bancodeoccidente.com.co/Servicios/Negocio/Consulta/wsdl/ConsultaTitularidad" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://bancodeoccidente.com.co/Servicios/Negocio/Consulta/xsd/consultarTitularidadDetallada">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://bancodeoccidente.com.co/Servicios/Negocio/Consulta/xsd/consultarTitularidadDetallada"
+    		schemaLocation="../xsd/consultarTitularidadDetallada.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="consultarTitularidadDetalladaRequest">
+    <wsdl:part element="xsd1:consultarTitularidadDetallada" name="input"/>
+  </wsdl:message>
+  <wsdl:message name="consultarTitularidadDetalladaResponse">
+    <wsdl:part element="xsd1:consultarTitularidadDetalladaRta" name="output"/>
+  </wsdl:message>
+  <wsdl:portType name="ConsultaTitularidadPortType">
+    <wsdl:operation name="consultarTitularidadDetallada">
+      <wsdl:input message="tns:consultarTitularidadDetalladaRequest"/>
+      <wsdl:output message="tns:consultarTitularidadDetalladaResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsultaTitularidadBinding"
+  	type="tns:ConsultaTitularidadPortType">
+
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="consultarTitularidadDetallada">
+
+  		<soap:operation
+  			soapAction="http://bancodeoccidente.com.co/Servicios/Negocio/Consulta/wsdl/ConsultaTitularidad/consultarTitularidadDetallada" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultaTitularidadService">
+    <wsdl:port binding="tns:ConsultaTitularidadBinding" name="ConsultaTitularidadPort">
+      <soap:address location="http://10.120.16.205:4800/ConsultaTitularidadService/ConsultaTitularidadPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

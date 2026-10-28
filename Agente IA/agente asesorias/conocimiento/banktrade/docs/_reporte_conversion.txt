@@ -1,0 +1,15 @@
+Convertidos: 1
+Omitidos (ya existian): 4
+Con errores: 0
+Para revisar a mano: 1
+
+REVISAR:
+- Diseno_Servicio_NotificarNegociacionDivisas_Parte2.docx (antes "Documento sin título (8).docx"): contiene 5 imagen(es) o diagrama(s), describirlos en texto
+
+OMITIDOS (usa --sobrescribir para reemplazarlos):
+- Plantilla_Diseno_Detallado_BankTrade.docx (antes "diseñoydesarrollobanktrade.docx")
+- Diseno_Servicio_NotificarNegociacionDivisas_Parte1.docx (antes "Documento 3.docx")
+- Diseno_Servicio_NotificacionCumpNegocDivisas.docx (antes "documento1 (1).docx")
+- Funcionalidad_Lista_OFAC_ALR.docx (antes "documento2 (2).docx")
+
+NOTA: "Documento 4  (2).docx" / "Documento 4  (2).md" se eliminó: la conversión no produjo contenido útil.

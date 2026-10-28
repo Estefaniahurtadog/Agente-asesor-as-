@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/xsd/AnularTransaccion"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/xsd/AnularTransaccion" xmlns:enc="http://bancodeoccidente.com.co/Servicios/Base/EncabezadosSOA" xmlns:dic="http://bancodeoccidente.com.co/xsd/base">
+	<import
+		namespace="http://bancodeoccidente.com.co/Servicios/Base/EncabezadosSOA"
+		schemaLocation="base/EncabezadosSOA.xsd">
+	</import>
+	<import namespace="http://bancodeoccidente.com.co/xsd/base" schemaLocation="base/Diccionario.xsd"></import>
+
+	<complexType name="AnularTransaccionEntradaType">
+		<sequence>
+			<element name="CompensacionFecha"
+				type="dic:CompensacionFecha_type" maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="ReversoMotivoCodigo"
+				type="dic:ReversoMotivoCodigo_type" maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="OrigenPtcionId"
+				type="dic:OrigenPtcionId_type" maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="TrxNumAsoc" type="dic:TrxNumAsoc_type"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="UsrioAsoc" type="dic:UsrioAsoc_type" maxOccurs="1" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="AnularTransaccionSalidaType">
+		<sequence>
+			<element name="RespuestaAdvertenciaCodigo"
+				type="dic:RespuestaAdvertenciaCodigo_type" maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="RespuestaAdvertenciaCodigoDesc" type="dic:RespuestaAdvertenciaCodigoDesc_type" maxOccurs="1" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="MnsjeEntrada">
+		<sequence>
+			<element ref="enc:EncabezadoEntrada"></element>
+			<element name="AnularTransaccionEntrada" type="tns:AnularTransaccionEntradaType"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="MnsjeSalida">
+		<sequence>
+            <element ref="enc:EncabezadoSalida"></element>
+            <element name="AnularTransaccionSalida" type="tns:AnularTransaccionSalidaType"></element>
+		</sequence>
+	</complexType>
+	
+
+    <element name="AnularTransaccion" type="tns:MnsjeEntrada"></element>
+
+    <element name="AnularTransaccionRta" type="tns:MnsjeSalida"></element>
+</schema>

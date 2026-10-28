@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema elementFormDefault="qualified" targetNamespace="http://bancodeoccidente.com.co/Servicios/Base/EncabezadosSOA" xmlns:tns="http://bancodeoccidente.com.co/Servicios/Base/EncabezadosSOA" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="EncabezadoEntrada" type="tns:EncabezadoEntradaType"/> 
+  <xsd:element name="EncabezadoSalida" type="tns:EncabezadoSalidaType"/> 
+  <xsd:complexType name="EncabezadoEntradaType">
+    <xsd:sequence>
+      <xsd:element name="AplCod" type="xsd:int"/>
+  	  <xsd:element name="TrmnalId" type="xsd:string"/> 
+  	  <xsd:element name="SesionId" type="xsd:string"/> 
+  	  <xsd:element name="PtcionId" type="xsd:string"/> 
+  	  <xsd:element name="Usrio" type="xsd:string"/> 
+  	  <xsd:element name="PtcionFecha" type="xsd:dateTime"/>      
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="EncabezadoSalidaType">
+    <xsd:sequence>
+      <xsd:element name="PtcionId" type="xsd:string"/>
+      <xsd:element name="RtaCod" type="xsd:string"/> 
+  	  <xsd:element name="RtaMnsje" type="xsd:string"/> 
+  	  <xsd:element name="SistMnsje" type="xsd:string"/>
+  	  <xsd:element name="MasMnsjes" type="xsd:boolean"/>       
+  	</xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

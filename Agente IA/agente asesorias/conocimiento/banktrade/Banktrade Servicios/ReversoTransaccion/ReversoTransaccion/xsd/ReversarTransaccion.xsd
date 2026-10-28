@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/xsd/ReversarTransaccion"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/xsd/ReversarTransaccion" xmlns:enc="http://bancodeoccidente.com.co/Servicios/Base/EncabezadosSOA" xmlns:dic="http://bancodeoccidente.com.co/xsd/base">
+	<import
+		namespace="http://bancodeoccidente.com.co/Servicios/Base/EncabezadosSOA"
+		schemaLocation="base/EncabezadosSOA.xsd">
+	</import>
+	<import namespace="http://bancodeoccidente.com.co/xsd/base" schemaLocation="base/Diccionario.xsd"></import>
+
+	<complexType name="ReversarTransaccionEntradaType">
+		<sequence>
+			<element name="CompensacionFecha"
+				type="dic:CompensacionFecha_type" minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="ReversoMotivoCodigo"
+				type="dic:ReversoMotivoCodigo_type" minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="OrigenPtcionId" type="dic:OrigenPtcionId_type" maxOccurs="1" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ReversarTransaccionSalidaType">
+		<sequence>
+            <element name="RespuestaAdvertenciaCodigo"
+				type="dic:RespuestaAdvertenciaCodigo_type" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<element name="RespuestaAdvertenciaCodigoDesc"
+				type="dic:RespuestaAdvertenciaCodigoDesc_type" minOccurs="0"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="MnsjeEntrada">
+		<sequence>
+			<element ref="enc:EncabezadoEntrada"></element>
+			<element name="ReversarTransaccionEntrada" type="tns:ReversarTransaccionEntradaType"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="MnsjeSalida">
+		<sequence>
+			<element ref="enc:EncabezadoSalida"></element>
+			<element name="ReversarTransaccionSalida" type="tns:ReversarTransaccionSalidaType"></element>
+		</sequence>
+	</complexType>
+
+    <element name="ReversarTransaccion" type="tns:MnsjeEntrada"></element>
+
+    <element name="ReversarTransaccionRta" type="tns:MnsjeSalida"></element>
+</schema>

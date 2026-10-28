@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="NotificacionCumpNegocDivisas" targetNamespace="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/wsdl/NotificacionCumpNegocDivisas" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/wsdl/NotificacionCumpNegocDivisas" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/xsd/NotificarCumpNegocDivisas">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/wsdl/NotificacionCumpNegocDivisas">
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/xsd/NotificarCumpNegocDivisas"
+    		schemaLocation="../xsd/NotificarCumpNegocDivisas.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="notificarCumpNegocDivisasRequest">
+    <wsdl:part element="ns1:NotificarCumpNegocDivisas" name="input"/>
+  </wsdl:message>
+  <wsdl:message name="notificarCumpNegocDivisasResponse">
+    <wsdl:part element="ns1:NotificarCumpNegocDivisasRta" name="output"/>
+  </wsdl:message>
+  <wsdl:portType name="NotificacionCumpNegocDivisasPortType">
+    <wsdl:operation name="notificarCumpNegocDivisas">
+      <wsdl:input message="tns:notificarCumpNegocDivisasRequest"/>
+      <wsdl:output message="tns:notificarCumpNegocDivisasResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NotificacionCumpNegocDivisasBinding" type="tns:NotificacionCumpNegocDivisasPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="notificarCumpNegocDivisas">
+      <soap:operation soapAction="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/wsdl/NotificacionCumpNegocDivisas/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NotificacionCumpNegocDivisasService">
+    <wsdl:port binding="tns:NotificacionCumpNegocDivisasBinding" name="NotificacionCumpNegocDivisasPort">
+      <soap:address location="http://localhost:80/NotificacionCumpNegocDivisasService/NotificacionCumpNegocDivisasPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

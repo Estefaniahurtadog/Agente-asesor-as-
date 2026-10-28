@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="ConsultaClienteYContactos" targetNamespace="http://bancodeoccidente.com.co/Servicios/Negocio/Consulta/wsdl/ConsultarDatosClienteYContactos" xmlns:ns1="http://bancodeoccidente.com.co/Servicios/Negocio/Consulta/xsd/ConsultarDatosClienteYContactos" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://bancodeoccidente.com.co/Servicios/Negocio/Consulta/wsdl/ConsultarDatosClienteYContactos" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  
+  <wsdl:types>
+    <xsd:schema>
+    	<xsd:import namespace="http://bancodeoccidente.com.co/Servicios/Negocio/Consulta/xsd/ConsultarDatosClienteYContactos" schemaLocation="../xsd/ConsultarDatosClienteYContactos.xsd">
+    	</xsd:import>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://www.example.org/ConsultaClienteYContactos/" xmlns:mrm="http://bancodeoccidente.com.co/Servicios/Negocio/Consulta/wsdl/ConsultarDatosClienteYContactos">
+      <xsd:element name="consultarDatosClienteYContactos">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="consultarDatosClienteYContactosResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="consultarDatosClienteYContactosRequest">
+    <wsdl:part element="ns1:ConsultarDatosClienteYContactos" name="input"/>
+  </wsdl:message>
+  <wsdl:message name="consultarDatosClienteYContactosResponse">
+    <wsdl:part element="ns1:ConsultarDatosClienteYContactosRta" name="output"/>
+  </wsdl:message>
+  <wsdl:portType name="ConsultaClienteYContactosPortType">
+    <wsdl:operation name="consultarDatosClienteYContactos">
+      <wsdl:input message="tns:consultarDatosClienteYContactosRequest"/>
+      <wsdl:output message="tns:consultarDatosClienteYContactosResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsultaClienteYContactosBinding" type="tns:ConsultaClienteYContactosPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="consultarDatosClienteYContactos">
+      <soap:operation soapAction="http://www.example.org/ConsultaClienteYContactos/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultaClienteYContactosService">
+    <wsdl:port binding="tns:ConsultaClienteYContactosBinding" name="ConsultaClienteYContactosPort">
+      <soap:address location="http://DPBOCC:7800/ConsultaClienteYContactosService/ConsultaClienteYContactosPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

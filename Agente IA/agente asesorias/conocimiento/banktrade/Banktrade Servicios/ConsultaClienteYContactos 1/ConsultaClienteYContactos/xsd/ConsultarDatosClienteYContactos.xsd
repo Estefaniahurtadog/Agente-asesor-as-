@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema elementFormDefault="qualified" targetNamespace="http://bancodeoccidente.com.co/Servicios/Negocio/Consulta/xsd/ConsultarDatosClienteYContactos" xmlns:dic="http://bancodeoccidente.com.co/xsd/base" xmlns:enc="http://bancodeoccidente.com.co/Servicios/Base/EncabezadosSOA" xmlns:tns="http://bancodeoccidente.com.co/Servicios/Negocio/Consulta/xsd/ConsultarDatosClienteYContactos" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:import namespace="http://bancodeoccidente.com.co/xsd/base" schemaLocation="base/Diccionario.xsd"/>
+	<xsd:import namespace="http://bancodeoccidente.com.co/Servicios/Base/EncabezadosSOA" schemaLocation="base/EncabezadosSOA.xsd"/>
+
+	<xsd:complexType name="ConsultarDatosClienteYContactosEntradaType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="IdentificacionTipo" type="dic:IdentificacionTipo_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="Identificacion" type="dic:Identificacion_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CntactoTipo" type="dic:CntactoTipo_type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="MnsjeEntradaType">
+		<xsd:sequence>
+			<xsd:element ref="enc:EncabezadoEntrada"/>
+			<xsd:element name="ConsultarDatosClienteYContactosEntrada" type="tns:ConsultarDatosClienteYContactosEntradaType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ConsultarDatosClienteYContactosSalidaType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="0" name="EstCod" type="dic:EstCod_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="PrdctoDesc" type="dic:PrdctoDesc_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="PersonaTipo" type="dic:PersonaTipo_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="IdentificacionTipo" type="dic:IdentificacionTipo_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Identificacion" type="dic:Identificacion_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="DgtoChqueo" type="dic:DgtoChqueo_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ExpedicionFecha" type="dic:ExpedicionFecha_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ExpedicionLugar" type="dic:ExpedicionLugar_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="CliNomPrmro" type="dic:CliNomPrmro_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="CliNomSgndo" type="dic:CliNomSgndo_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="CliApellPrmro" type="dic:CliApellPrmro_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="CliApellSgndo" type="dic:CliApellSgndo_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="RazonSocial" type="dic:RazonSocial_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="NombreComercial" type="dic:NombreComercial_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ClienteEst" type="dic:ClienteEst_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ClienteNivel" type="dic:ClienteNivel_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Sexo" type="dic:Sexo_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="CivilEst" type="dic:CivilEst_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Profesion" type="dic:Profesion_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Ocupacion" type="dic:Ocupacion_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ViviendaTipo" type="dic:ViviendaTipo_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="EduNivel" type="dic:EduNivel_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Estrato" type="dic:Estrato_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="VinculacionFecha" type="dic:VinculacionFecha_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="PersonasACargo" type="dic:PersonasACargo_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="HijosNum" type="dic:HijosNum_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="NactoFecha" type="dic:NactoFecha_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="NactoPais" type="dic:NactoPais_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="NactoDepto" type="dic:NactoDepto_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="NactoCiudad" type="dic:NactoCiudad_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Nacionalidad" type="dic:Nacionalidad_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="EsClinton" type="dic:EsClinton_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="EsVIP" type="dic:EsVIP_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="TarjetaProfesional" type="dic:TarjetaProfesional_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="EsListaSeg" type="dic:EsListaSeg_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ActividadEconomica" type="dic:ActividadEconomica_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="EntTipo" type="dic:EntTipo_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ConstitucionFecha" type="dic:ConstitucionFecha_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="EsSIPLA" type="dic:EsSIPLA_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="EsEdoRcrsoAdmor" type="dic:EsEdoRcrsoAdmor_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="EsDeclEf" type="dic:EsDeclEf_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="EsExdoRf" type="dic:EsExdoRf_type">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="EsSegBca" type="dic:EsSegBca_type">
+			</xsd:element>
+
+			<xsd:element name="InfoDir">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="0" name="DirTipo" type="dic:DirTipo_type">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="Dir" type="dic:Dir_type">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="Ciudad" type="dic:Ciudad_type">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="Depto" type="dic:Depto_type">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="Pais" type="dic:Pais_type">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="CrmPerfilNum" type="dic:CrmPerfilNum_type">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="InfoTelefono">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="0" name="TelTipo" type="dic:TelTipo_type">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="Tel" type="dic:Tel_type">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="Ciudad" type="dic:Ciudad_type">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="Depto" type="dic:Depto_type">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="Pais" type="dic:Pais_type">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="TelCrmPerfilNum" type="dic:TelCrmPerfilNum_type">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="RepresentanteLegal">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="0" name="IdentificacionTipo" type="dic:IdentificacionTipo_type">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="Identificacion" type="dic:Identificacion_type">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="Nombre" type="dic:Nombre_type">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="InfoCntactoDatos">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="0" name="CliApellPrmro" type="dic:CliApellPrmro_type">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="CliApellSgndo" type="dic:CliApellSgndo_type">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="ClienteNombre" type="dic:ClienteNombre_type">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="Tel" type="dic:Tel_type">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="InfoCorreoElectronico">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="0" name="TipoCorreoElectronico" type="dic:TipoCorreoElectronico_type">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="CorreoElectronico" type="dic:CorreoElectronico_type">
+						</xsd:element>
+						<xsd:element maxOccurs="1" minOccurs="0" name="CorreoCrmPerfilNum" type="dic:CorreoCrmPerfilNum_type">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="InfoSedes">
+				<xsd:complexType>
+					<xsd:sequence>			
+						<xsd:element maxOccurs="unbounded" minOccurs="1" name="InfoSede">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element maxOccurs="1" minOccurs="0" name="IdentificacionAsoc" type="dic:IdentificacionAsoc_type">
+									</xsd:element>
+									<xsd:element maxOccurs="1" minOccurs="0" name="NombreAsoc" type="dic:NombreAsoc_type">
+									</xsd:element>
+									<xsd:element name="InfoSedeAsoc">
+										<xsd:complexType>
+											<xsd:sequence>
+												<xsd:element name="InfoSedeDir">
+													<xsd:complexType>
+														<xsd:sequence>
+															<xsd:element maxOccurs="1" minOccurs="0" name="DirTipo" type="dic:DirTipo_type">
+															</xsd:element>
+															<xsd:element maxOccurs="1" minOccurs="0" name="Dir" type="dic:Dir_type">
+															</xsd:element>
+															<xsd:element maxOccurs="1" minOccurs="0" name="Ciudad" type="dic:Ciudad_type">
+															</xsd:element>
+															<xsd:element maxOccurs="1" minOccurs="0" name="Depto" type="dic:Depto_type">
+															</xsd:element>
+															<xsd:element maxOccurs="1" minOccurs="0" name="Pais" type="dic:Pais_type">
+															</xsd:element>
+															<xsd:element maxOccurs="1" minOccurs="0" name="CrmPerfilNum" type="dic:CrmPerfilNum_type">
+															</xsd:element>
+														</xsd:sequence>
+													</xsd:complexType>
+												</xsd:element>
+												<xsd:element name="InfoSedeTel">
+													<xsd:complexType>
+														<xsd:sequence>
+															<xsd:element maxOccurs="1" minOccurs="0" name="TelTipo" type="dic:TelTipo_type">
+															</xsd:element>
+															<xsd:element maxOccurs="1" minOccurs="0" name="Tel" type="dic:Tel_type">
+															</xsd:element>
+															<xsd:element maxOccurs="1" minOccurs="0" name="Ciudad" type="dic:Ciudad_type">
+															</xsd:element>
+															<xsd:element maxOccurs="1" minOccurs="0" name="Depto" type="dic:Depto_type">
+															</xsd:element>
+															<xsd:element maxOccurs="1" minOccurs="0" name="Pais" type="dic:Pais_type">
+															</xsd:element>
+															<xsd:element maxOccurs="1" minOccurs="0" name="TelCrmPerfilNum" type="dic:TelCrmPerfilNum_type">
+															</xsd:element>
+														</xsd:sequence>
+													</xsd:complexType>
+												</xsd:element>						
+												<xsd:element name="InfoSedeCorreoElectronico">
+													<xsd:complexType>
+														<xsd:sequence>
+															<xsd:element maxOccurs="1" minOccurs="0" name="TipoCorreoElectronico" type="dic:TipoCorreoElectronico_type">
+															</xsd:element>
+															<xsd:element maxOccurs="1" minOccurs="0" name="CorreoElectronico" type="dic:CorreoElectronico_type">
+															</xsd:element>
+															<xsd:element maxOccurs="1" minOccurs="0" name="CorreoCrmPerfilNum" type="dic:CorreoCrmPerfilNum_type">
+															</xsd:element>
+														</xsd:sequence>
+													</xsd:complexType>
+												</xsd:element>									
+											</xsd:sequence>
+										</xsd:complexType>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>				
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="InfoGerentes">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="unbounded" minOccurs="1" name="InfoGerentesDtll">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element maxOccurs="1" minOccurs="1" name="EmpldoCod" type="dic:EmpldoCod_type"/>
+								<xsd:element maxOccurs="1" minOccurs="1" name="Nombre" type="dic:Nombre_type"/>
+								<xsd:element maxOccurs="1" minOccurs="1" name="GerenteTipo" type="dic:GerenteTipo_type"/>
+								<xsd:element maxOccurs="1" minOccurs="1" name="OfcnaNom" type="dic:OfcnaNom_type"/>
+								<xsd:element maxOccurs="1" minOccurs="1" name="Ciudad" type="dic:Ciudad_type"/>
+								<xsd:element maxOccurs="1" minOccurs="1" name="OfcnaJefe" type="dic:OfcnaJefe_type"/>							
+							</xsd:sequence>
+						</xsd:complexType>
+						</xsd:element>						
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element maxOccurs="1" minOccurs="0" name="InfoCntacto">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="unbounded" minOccurs="1" name="DetCntacnto">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element maxOccurs="1" minOccurs="1" name="ClienteNombre" type="dic:ClienteNombre_type"/>
+								<xsd:element maxOccurs="1" minOccurs="1" name="InfoCntactoDatos">
+									<xsd:complexType>
+										<xsd:sequence>
+											<xsd:element maxOccurs="1" minOccurs="1" name="InfoDir">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element maxOccurs="unbounded" minOccurs="1" name="InfoDireccion">
+													<xsd:complexType>
+														<xsd:sequence>
+															<xsd:element maxOccurs="1" minOccurs="1" name="DirTipo" type="dic:DirTipo_type"/>
+															<xsd:element maxOccurs="1" minOccurs="1" name="Pais" type="dic:Pais_type"/>
+															<xsd:element maxOccurs="1" minOccurs="1" name="Depto" type="dic:Depto_type"/>
+															<xsd:element maxOccurs="1" minOccurs="1" name="CiudadCod" type="dic:CiudadCod_type"/>
+															<xsd:element maxOccurs="1" minOccurs="1" name="Dir" type="dic:Dir_type"/>
+														</xsd:sequence>
+													</xsd:complexType>
+													</xsd:element>						
+												</xsd:sequence>
+											</xsd:complexType>
+											</xsd:element>	
+											<xsd:element maxOccurs="1" minOccurs="1" name="InfoTelefono">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element maxOccurs="unbounded" minOccurs="1" name="InfoTel">
+													<xsd:complexType>
+														<xsd:sequence>
+															<xsd:element maxOccurs="1" minOccurs="1" name="TelefonoTipo" type="dic:TelefonoTipo_type"/>
+															<xsd:element maxOccurs="1" minOccurs="1" name="Pais" type="dic:Pais_type"/>
+															<xsd:element maxOccurs="1" minOccurs="1" name="Depto" type="dic:Depto_type"/>
+															<xsd:element maxOccurs="1" minOccurs="1" name="TelCiudadCod" type="dic:TelCiudadCod_type"/>
+															<xsd:element maxOccurs="1" minOccurs="1" name="Tel" type="dic:Tel_type"/>
+														</xsd:sequence>
+													</xsd:complexType>
+													</xsd:element>						
+												</xsd:sequence>
+											</xsd:complexType>
+											</xsd:element>																	
+											<xsd:element maxOccurs="1" minOccurs="1" name="InfoCorreoElectronico">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element maxOccurs="unbounded" minOccurs="1" name="InfoCorreo">
+													<xsd:complexType>
+														<xsd:sequence>
+															<xsd:element maxOccurs="1" minOccurs="1" name="TipoCorreoElectronico" type="dic:TipoCorreoElectronico_type"/>
+															<xsd:element maxOccurs="1" minOccurs="1" name="CorreoEntregaCont" type="dic:CorreoEntregaCont_type"/>
+															<xsd:element maxOccurs="1" minOccurs="1" name="CorreoElectronico" type="dic:CorreoElectronico_type"/>
+														</xsd:sequence>
+													</xsd:complexType>
+													</xsd:element>						
+												</xsd:sequence>
+											</xsd:complexType>
+											</xsd:element>	
+										</xsd:sequence>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+						</xsd:element>						
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+		</xsd:sequence>
+	</xsd:complexType>
+
+    <xsd:element name="ConsultarDatosClienteYContactos" type="tns:MnsjeEntradaType">
+  </xsd:element>
+
+    <xsd:complexType name="MnsjeSalidaType">
+    	<xsd:sequence>
+    		<xsd:element ref="enc:EncabezadoSalida"/>
+    		<xsd:element name="ConsultarDatosClienteYContactosSalida" type="tns:ConsultarDatosClienteYContactosSalidaType"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="ConsultarDatosClienteYContactosRta" type="tns:MnsjeSalidaType">
+  </xsd:element>
+</xsd:schema>

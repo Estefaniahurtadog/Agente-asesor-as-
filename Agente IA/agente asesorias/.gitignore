@@ -1,0 +1,8 @@
+# Índice vectorial local generado por app_local/indexer.py (se reconstruye con un clic)
+app_local/chroma_db/
+
+# Entornos virtuales de Python, si se usan
+.venv/
+venv/
+__pycache__/
+*.pyc

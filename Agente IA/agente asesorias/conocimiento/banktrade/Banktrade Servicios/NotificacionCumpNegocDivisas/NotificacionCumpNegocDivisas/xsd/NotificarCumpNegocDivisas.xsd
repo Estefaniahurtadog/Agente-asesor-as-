@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/xsd/NotificarCumpNegocDivisas"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/xsd/NotificarCumpNegocDivisas"
+	xmlns:enc="http://bancodeoccidente.com.co/Servicios/Base/EncabezadosSOA"
+	xmlns:dic="http://bancodeoccidente.com.co/xsd/base">
+
+
+	<import namespace="http://bancodeoccidente.com.co/xsd/base"
+		schemaLocation="base/Diccionario.xsd">
+	</import>
+	<import namespace="http://bancodeoccidente.com.co/Servicios/Base/EncabezadosSOA" schemaLocation="base/EncabezadosSOA.xsd"></import>
+	<complexType name="NotificarCumpNegocDivisasSalidaType"></complexType>
+
+	<complexType name="MnsjeEntradaType">
+		<sequence>
+			<element ref="enc:EncabezadoEntrada"></element>
+			<element name="NotificarCumpNegocDivisasEntrada"
+				type="tns:NotificarCumpNegocDivisasEntradaType">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="MnsjeSalidaType">
+		<sequence>
+			<element ref="enc:EncabezadoSalida"></element>
+		</sequence>
+	</complexType>
+
+	<element name="NotificarCumpNegocDivisas"
+		type="tns:MnsjeEntradaType">
+	</element>
+
+	<element name="NotificarCumpNegocDivisasRta"
+		type="tns:MnsjeSalidaType">
+	</element>
+
+	<complexType name="NotificarCumpNegocDivisasEntradaType">
+		<sequence>
+			<element name="OperacionCodigo"
+				type="dic:OperacionCodigo_type">
+			</element>
+		</sequence>
+	</complexType>
+</schema>

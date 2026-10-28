@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/xsd/DebitarAcreditarCuenta"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/xsd/DebitarAcreditarCuenta" xmlns:dic="http://bancodeoccidente.com.co/xsd/base" xmlns:enc="http://bancodeoccidente.com.co/Servicios/Base/EncabezadosSOA">
+	<import namespace="http://bancodeoccidente.com.co/xsd/base"
+		schemaLocation="base/Diccionario.xsd">
+	</import>
+	<import namespace="http://bancodeoccidente.com.co/Servicios/Base/EncabezadosSOA" schemaLocation="base/EncabezadosSOA.xsd"></import>
+
+	<complexType name="DebitarAcreditarCuentaEntradaType">
+		<sequence>
+			<element name="ProductoTipo" type="dic:ProductoTipo_type"></element>
+			<element name="EsExtemporaneo" type="dic:EsExtemporaneo_type"></element>
+			<element name="OperacionCodigo"
+				type="dic:OperacionCodigo_type">
+			</element>
+			<element name="Producto" type="dic:Producto_type"></element>
+			<element name="TrxNum" type="dic:TrxNum_type"></element>
+			<element name="TrxTipo" type="dic:TrxTipo_type"></element>
+			<element name="NotaDesc"
+				type="dic:NotaDesc_type">
+			</element>
+			<element name="TransaccionValor" type="dic:TransaccionValor_type"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="DebitarAcreditarCuentaSalidaType">
+		<sequence>
+			<element name="Autorizacion" type="dic:Autorizacion_type"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="MnsjeEntradaType">
+		<sequence>
+			<element ref="enc:EncabezadoEntrada"></element>
+			<element name="DebitarAcreditarCuentaEntrada" type="tns:DebitarAcreditarCuentaEntradaType"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="MnsjeSalidaType">
+		<sequence>
+			<element ref="enc:EncabezadoSalida"></element>
+			<element name="DebitarAcreditarCuentaSalida" type="tns:DebitarAcreditarCuentaSalidaType"></element>
+		</sequence>
+	</complexType>
+
+    <element name="DebitarAcreditarCuenta" type="tns:MnsjeEntradaType"></element>
+
+    <element name="DebitarAcreditarCuentaRta" type="tns:MnsjeSalidaType"></element>
+</schema>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://bancodeoccidente.com.co/Servicios/Negocio/Consulta/xsd/consultarTitularidadDetallada"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://bancodeoccidente.com.co/Servicios/Negocio/Consulta/xsd/consultarTitularidadDetallada" xmlns:enc="http://bancodeoccidente.com.co/Servicios/Base/EncabezadosSOA" xmlns:dic="http://bancodeoccidente.com.co/xsd/base">
+	<import namespace="http://bancodeoccidente.com.co/Servicios/Base/EncabezadosSOA"
+		schemaLocation="base/EncabezadosSOA.xsd">
+	</import>
+	<import namespace="http://bancodeoccidente.com.co/xsd/base"
+		schemaLocation="base/Diccionario.xsd"></import>
+
+	<complexType name="consultarTitularidadDetalladaEntradaType">
+		<sequence>
+			<element name="OperacionCodigo"
+				type="dic:OperacionCodigo_type" maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="OficinaCodigo" type="dic:OficinaCodigo_type"
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="OfcnaNom" type="dic:OfcnaNom_type"
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="CiudadCodigo" type="dic:CiudadCodigo_type"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="JornadaCodigo" type="dic:JornadaCodigo_type"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="CompensacionFecha"
+				type="dic:CompensacionFecha_type" maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="ProductoTipo" type="dic:ProductoTipo_type"
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="Producto" type="dic:Producto_type"
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="PrdctoInfo" type="dic:PrdctoInfo_type"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="ModoEntrada" type="dic:ModoEntrada_type"
+				maxOccurs="1" minOccurs="0">
+			</element>
+		</sequence>
+	</complexType>
+
+    <complexType name="consultarTitularidadDetalladaSalidaType">
+    	<sequence>
+			<element name="IdentificacionTipo"
+				type="dic:IdentificacionTipo_type" maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="Identificacion"
+				type="dic:Identificacion_type" maxOccurs="1" minOccurs="1">
+			</element>
+            <element name="ClienteNombre" type="dic:ClienteNombre_type" maxOccurs="1" minOccurs="1"></element>
+            <element name="Autorizacion" type="dic:Autorizacion_type" maxOccurs="1"
+				minOccurs="1">
+			</element>
+		</sequence>
+    </complexType>
+
+    <complexType name="MnsjeEntradaType">
+    	<sequence>
+    		<element ref="enc:EncabezadoEntrada"></element>
+    		<element name="consultarTitularidadDetalladaEntrada" type="tns:consultarTitularidadDetalladaEntradaType"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="consultarTitularidadDetallada" type="tns:MnsjeEntradaType"></element>
+
+    <complexType name="MnsjeSalidaType">
+    	<sequence>
+    		<element ref="enc:EncabezadoSalida"></element>
+    		<element name="consultarTitularidadDetalladaSalida" type="tns:consultarTitularidadDetalladaSalidaType"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="consultarTitularidadDetalladaRta" type="tns:MnsjeSalidaType"></element>
+</schema>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="ReversoTransaccion" targetNamespace="http://bancodeoccidente.com.co/Servicio/Negocio/Administracion/wsdl/ReversoTransaccion" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://bancodeoccidente.com.co/Servicio/Negocio/Administracion/wsdl/ReversoTransaccion" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/xsd/ReversarTransaccion" xmlns:ns2="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/xsd/AnularTransaccion">
+  <wsdl:types>
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/xsd/ReversarTransaccion"
+    		schemaLocation="../xsd/ReversarTransaccion.xsd">
+    	</xsd:import>
+    	<xsd:import
+    		namespace="http://bancodeoccidente.com.co/Servicios/Negocio/Administracion/xsd/AnularTransaccion"
+    		schemaLocation="../xsd/AnularTransaccion.xsd">
+    	</xsd:import></xsd:schema><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://bancodeoccidente.com.co/Servicio/Negocio/Administracion/wsdl/ReversoTransaccion">
+	<xsd:element name="AnularTransaccion">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AnularTransaccionResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element></xsd:schema></wsdl:types>
+  <wsdl:message name="ReversarTransaccionRequest">
+    <wsdl:part element="ns1:ReversarTransaccion" name="input" />
+  </wsdl:message>
+  <wsdl:message name="ReversarTransaccionResponse">
+    <wsdl:part element="ns1:ReversarTransaccionRta" name="ouput" />
+  </wsdl:message>
+  <wsdl:message name="AnularTransaccionRequest">
+  	<wsdl:part name="input" element="ns2:AnularTransaccion"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AnularTransaccionResponse">
+  	<wsdl:part name="output" element="ns2:AnularTransaccionRta"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ReversoTransaccionPortType">
+    <wsdl:operation name="ReversarTransaccion">
+      <wsdl:input message="tns:ReversarTransaccionRequest"/>
+      <wsdl:output message="tns:ReversarTransaccionResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="AnularTransaccion">
+    	<wsdl:input message="tns:AnularTransaccionRequest"></wsdl:input>
+    	<wsdl:output message="tns:AnularTransaccionResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ReversoTransaccionBinding"
+  	type="tns:ReversoTransaccionPortType">
+
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="ReversarTransaccion">
+
+  		<soap:operation
+  			soapAction="http://bancodeoccidente.com.co/Servicio/Negocio/Administracion/wsdl/ReversoTransaccion/ReversarTransaccion" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="AnularTransaccion">
+  		<soap:operation
+  			soapAction="http://bancodeoccidente.com.co/Servicio/Negocio/Administracion/wsdl/ReversoTransaccion/AnularTransaccion" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReversoTransaccionService">
+    <wsdl:port binding="tns:ReversoTransaccionBinding" name="ReversoTransaccionPort">
+      <soap:address location="http://10.120.22.130:4800/ReversoTransaccionService/ReversoTransaccionPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
